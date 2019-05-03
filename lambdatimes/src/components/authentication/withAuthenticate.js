@@ -1,6 +1,6 @@
 import React from 'react';
 
-const withAuthenticate = LoginComponent => LoggedOutComponent =>  
+const withAuthenticate = ProtectedContent => OpenContent =>  
   class extends React.Component {
     constructor() {
       super();
@@ -19,9 +19,9 @@ const withAuthenticate = LoginComponent => LoggedOutComponent =>
 
     render() {
       if (this.state.loggedIn) {
-        return <LoginComponent />
+        return <ProtectedContent loggedIn={this.state.loggedIn}/>
       } else {
-        return <LoggedOutComponent />
+        return <OpenContent loggedIn={this.state.loggedIn}/>
       }
     }
   }
