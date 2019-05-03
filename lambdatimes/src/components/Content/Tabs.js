@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Tab from './Tab';
 
 const Tabs = props => {
+  console.log(props);
   return (
     <div className="tabs">
       <div className="topics">
@@ -10,7 +11,7 @@ const Tabs = props => {
 
         {/* map over the tabs provided on your props, create a new Tab component for each one.
             give the tab component a `selectTabHandler`, the `selectedTab`, and the `tab` itself as props*/
-          props.tabs.map((tab, i) => <Tab key={i} tab={tab} />)
+          props.tabs.map((tab, i) => <Tab key={i} tab={tab} selectedTab={props.selectedTab} selectTabHandler={props.selectTabHandler} />)
             }
       </div>
     </div>
@@ -22,4 +23,11 @@ const Tabs = props => {
 Tabs.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.string)
 };
+
+Tabs.propTypes = {
+    tabs: PropTypes.arrayOf(PropTypes.string),
+    selectedTab: PropTypes.string,
+    selectTabHandler: PropTypes.func 
+};
+
 export default Tabs;
