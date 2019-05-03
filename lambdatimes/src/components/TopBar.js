@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import LoginModal from './Login/LoginModal';
 // Refactor this component to use styled components and not classNames.
 // You can find the corresponding CSS in the CSS/index.css file
 
@@ -12,7 +12,8 @@ const TopBarWrapper = styled.div`
 	flex-direction: row;
 	position: fixed;
 	height: 44px;
-	background-color: #333;
+  background-color: #333;
+  z-index: 10;
 `;
 
 const TopBarContainer = styled.div`
@@ -95,7 +96,7 @@ const TopBar = () => {
 					<ContainerCenterSpan>ANNOUNCEMENTS</ContainerCenterSpan>
 				</ContainerCenter>
 				<ContainerRight>
-					<ContainerRightSpan>LOG IN</ContainerRightSpan>
+					<LoginModal />
 				</ContainerRight>
 			</TopBarContainer>
 		</TopBarWrapper>
