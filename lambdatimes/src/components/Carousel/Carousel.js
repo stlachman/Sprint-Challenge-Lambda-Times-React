@@ -12,14 +12,19 @@ export default class Carousel extends Component {
   }
   componentDidMount(){
     this.setState({ images: carouselData})
+    this.selectedImage();
   }
 
   leftClick = () => {
-    
+    this.setState({
+      index: this.state.index - 1
+    })
   }
 
   rightClick = () => {
-
+    this.setState({
+      index: this.state.index + 1
+    })
   }
 
   selectedImage = () => {
@@ -29,9 +34,7 @@ export default class Carousel extends Component {
   render(){
     return (
       <div className="carousel">
-        {this.state.images.map(image => {
-          return <img src={image}/>
-        })}
+        {this.selectedImage()}
         <div className="left-button" onClick={this.leftClick}>{"<"}</div>
         <div className="right-button" onClick={this.rightClick}>{">"}</div>
       </div>
