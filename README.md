@@ -29,9 +29,27 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 ## Self-Study/Essay Questions
 
 - [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+
+  PropTypes is a package that can be used with React to check the type of data (‘string’, ‘object’, etc.) passed around your React application. Type checking gives you the opportunity to check if the data that you are receiving corresponds to the data that you expected to receive. This helps prevent errors and bugs in your code because if you are expecting a string for the src of an image for example, and you receive another type, say a number, the image will not render correctly. By  type checking your data, you can avoid these errors or find a way to handle them gracefully so that the user is notified of her error. 
+
 - [ ] Describe a life-cycle event in React?
+
+  A life cycle event describes a point in time of React component and allows developers to hook into these events to perform actions. For example, the ComponentDidMount life cycle event lets the developer know that the component has rendered without any errors errors. ComponentDidMount is only run once in the life cycle of a component while other lifecycle methods (such as ComponentDidUpdate) can surface multiple times in the life cycle of a component. ComponentDidMount is often used to fetch data from an API and set that data to the state of the component using setState.
+
+
 - [ ] Explain the details of a Higher Order Component?
+
+  A higher order component is a component that takes another component as an argument and returns a new component. The higher order component allows us to reuse logic associated with a component somewhere else in our application, so it keeps our code DRY.  One example of a HOC can be found in the styled components library. If we define a button with specific css properties and then we want to modify some of the features of the button (like the color of the text or the background color), then we could create a HOC that takes the button component and passes it in to this new button. Then we could add our styles to the new button and return the new button for use in our application. 
+
+
 - [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+
+  One way to style components in React is by using plain old CSS (or the preprocess of your choice) and importing the CSS file to the component we would like to style.  The benefit of this approach is that it is familiar to people outside of the React ecosystem and it is the simplest way to get started when styling an application. 
+
+  Another approach would be to use an external library such as Reactstrap to handle the majority of your styling. In this approach, you would import and use predefined components to create all of the elements of your website and pass down props to the component to modify the color or properties of a UI element. The benefit of this approach is that once you understand the library, styling a website becomes much faster than handwriting most of your CSS.
+
+  A third approach	would be to use a CSS in JS library like styled components to style your application. In this pattern, your styles can live adjacent to the logic and heart of your component which can make the component easier to reason about while reducing the cognitive load of the development team since you don’t need to search through an external stylesheet to modify your component. By using a library like styled components, you can also create your own custom UI library (like reactstrap) but tailored to the needs of your particular product (and without the excess code of a css library). Finally, by using styled components you can avoid styles leaking into other parts of your application because each component receives a unique classname. 
+
 
 ## Project Setup
 
