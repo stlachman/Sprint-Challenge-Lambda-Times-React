@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Tab from './Tab';
 
 const Tabs = props => {
-  console.log(props);
   return (
     <div className="tabs">
       <div className="topics">
@@ -19,10 +18,6 @@ const Tabs = props => {
 };
 
 // Make sure to use PropTypes to validate your types!
-
-Tabs.propTypes = {
-  tabs: PropTypes.arrayOf(PropTypes.string)
-};
 
 Tabs.propTypes = {
     tabs: PropTypes.arrayOf(PropTypes.string),
